@@ -4,15 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Synapse: The spark. The idea. The human element.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Syntax: The structure. The language. The code.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I find that we live our lives between these two concepts: taking the raw sparks of our ideas and feelings (synapse) and constantly trying to shape them into a life with meaning (syntax).
 
-
-[jekyll-organization]: https://github.com/jekyll
+This blog is my own journey through that process, documented.
