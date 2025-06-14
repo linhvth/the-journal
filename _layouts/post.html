@@ -30,6 +30,14 @@ layout: base
       </div>
       {%- endif %}
     </div>
+
+    {%- if page.tags.size > 0 -%}
+      <div class="tag-cloud">
+        {%- for tag in page.tags -%}
+          <a class="tag-link" href="/tag/{{ tag | slugify }}/"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">

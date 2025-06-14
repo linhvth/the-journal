@@ -1,2 +1,68 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+/* In assets/main.scss */
+
+.tag-link:not(:last-child)::after {
+  content: "•"; /* The character to display. You can use "·" or "|" as well */
+  margin-left: 10px;  /* Space after the tag */
+  margin-right: 10px; /* Space before the next tag */
+  color: #828282;      /* A subtle grey color for the dot */
+  text-decoration: none; /* Ensures the dot is not underlined on hover */
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 40px; /* Or 2em, etc. This adds the space below the topics. */
+}
+
+/* In assets/main.scss */
+
+/* Styling for the horizontal lines around the tags */
+.tag-divider {
+  border: 0;
+  height: 1px;
+  border-top: 1px solid $border-color-01; /* A dark grey line */
+}
+
+/* The container for the tags on the homepage */
+.tag-cloud {
+  display: flex;
+  justify-content: center; /* This centers the tags horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* Allows tags to wrap to a new line on small screens */
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+}
+
+/* The individual tag link */
+.tag-link {
+  color: #ccc; /* A light grey for the main tag text */
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.2s ease-in-out;
+}
+
+/* The hover effect for the tag link */
+.tag-link:hover {
+  color: #fff; /* Make it bright white on hover */
+}
+
+/* Adds the '#' before the tag name */
+.tag-link::before {
+  color: #888; /* A dimmer grey for the hashtag symbol */
+  margin-right: 3px;
+}
+
+/* Adds the '•' separator after each tag (but not the last one) */
+.tag-link:not(:last-child)::after {
+  content: "•";
+  color: #888; /* Use the same dimmer grey for the separator */
+  margin-left: 12px;
+  margin-right: 12px;
+}

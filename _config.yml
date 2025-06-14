@@ -4,8 +4,8 @@
 title: Synapse and Syntax
 
 author:
-  name: Linh Vu
-  email: linhvth.contact@gmail.com
+  name: Linh Vu (linhvth)
+  email: linhvth (dot) contact (at) gmail (dot) com
 
 # The `>` after `description:` means to ignore line-breaks until next key. If
 #   you wish to omit the line-break after the end of text, use `>-` instead.
@@ -33,7 +33,15 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
  - jekyll-paginate
+ - jekyll-archives
 
+jekyll-archives:
+  enabled:
+    - tags
+  layout: tag_archive
+  permalinks:
+    tag: '/tag/:name/'
+    
 # Uncomment the following setting if you wish to disable deprecation warnings
 #   from newer versions of sass converter. Adapt as required.
 sass:
@@ -62,6 +70,7 @@ minima:
   #   the order they should be rendered.
   nav_pages:
     - about.md
+    - bookmarks.md
 
   # Set to `true` to show excerpts on the homepage.
   show_excerpts: true
@@ -69,7 +78,7 @@ minima:
   # Minima date format.
   #   The default value is "%b %d, %Y" (e.g. Nov 14, 2023).
   #   Refer to https://shopify.github.io/liquid/filters/date/ for valid values
-  date_format: "%b-%d-%Y"
+  date_format: "%b %d, %Y"
 
   # Social Media Links.
   #   Renders icons via Font Awesome Free webfonts CDN, based on ordered list of

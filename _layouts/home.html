@@ -16,6 +16,19 @@ layout: base
     {% assign posts = site.posts %}
   {% endif %}
 
+  {%- assign tags = site.tags | sort -%}
+  {% if tags.size > 0 %}
+    <div class="tag-cloud">
+      {% for tag in tags %}
+        <a class="tag-link" href="/tag/{{ tag[0] | slugify }}/"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag[0] }}</a>
+      {% endfor %}
+    </div>
+    <hr class="tag-divider">
+  {% endif %}
+
+  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+  <ul class="post-list">
+
 
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
