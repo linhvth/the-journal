@@ -66,3 +66,11 @@
   margin-left: 12px;
   margin-right: 12px;
 }
+
+.section-separator {
+  border: 0;
+  height: 1px;
+  background-color: var(--minima-border-color); /* Uses Minima's border color */
+  margin: 20px auto; /* Adjust top/bottom margin for more/less space */
+  max-width: 600px; /* Ensure it doesn't get too wide on large screens */
+}

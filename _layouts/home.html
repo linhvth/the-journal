@@ -27,7 +27,22 @@ layout: base
     <hr class="tag-divider">
   {% endif %}
 
-  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+
+  <h2 class="post-list-heading">{{ page.title | default: "Announcements" }}</h2>
+
+  <div style="
+    padding-left: 20px; /* Adjust this value for more/less indent */
+    border-left: 3px solid #66b3ff; /* A subtle blue line on the left */
+    margin-bottom: 20px; /* Space below the box */
+  ">
+    <p>
+      <i class="fa-solid fa-bullhorn" style="margin-right: 8px; color: #2196f3;"></i>
+      I'm currently setting up the comment section for this site. Until it's live, please don't hesitate to send me an email if you'd like to connect!
+    </p>
+  </div>
+  
+  <hr class="section-separator">
+  <h2 class="post-list-heading">{{ page.list_title | default: "Recent Posts" }}</h2>
   <ul class="post-list">
 
 
