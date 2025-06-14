@@ -1,0 +1,57 @@
+# This is the name of the workflow.
+name: Deploy Jekyll Site to GitHub Pages
+
+on:
+  # This workflow runs on any push to your default branch.
+  push:
+    branches: ["master"] #  <-- This is correct for you since your branch is named 'master'.
+
+  # This allows you to run the workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Grant the necessary permissions for the workflow to deploy to GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, cancelling older runs.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # The build job, which compiles your Jekyll site.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          # This should match the Ruby version you use.
+          # Based on your error logs, you are using 3.4.
+          ruby-version: '3.4' 
+          bundler-cache: true # This runs 'bundle install' and caches gems for speed.
+      - name: Setup GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build site with Jekyll
+        # This command builds the site. The baseurl is set automatically.
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+      - name: Upload artifact
+        # This uploads the finished '_site' folder to be deployed.
+        uses: actions/upload-pages-artifact@v3
+
+  # The deployment job, which takes the built site and makes it live.
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
