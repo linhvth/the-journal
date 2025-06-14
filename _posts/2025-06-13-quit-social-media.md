@@ -1,6 +1,7 @@
 ---
 layout: post
 title: On Quitting Social Media
+comments: true
 tags: 
     - thoughts
 ---
