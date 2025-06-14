@@ -34,7 +34,8 @@ layout: base
     {%- if page.tags.size > 0 -%}
       <div class="tag-cloud">
         {%- for tag in page.tags -%}
-          <a class="tag-link" href="/tag/{{ tag | slugify }}/"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
+          {%- assign tag_slug = tag | slugify -%}
+          <a class="tag-link" href="{{ '/tag/' | append: tag_slug | append: '/' | relative_url }}"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
         {%- endfor -%}
       </div>
     {%- endif -%}

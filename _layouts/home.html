@@ -20,7 +20,8 @@ layout: base
   {% if tags.size > 0 %}
     <div class="tag-cloud">
       {% for tag in tags %}
-        <a class="tag-link" href="/tag/{{ tag[0] | slugify }}/"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag[0] }}</a>
+        {%- assign tag_slug = tag[0] | slugify -%}
+    <a class="tag-link" href="{{ '/tag/' | append: tag_slug | append: '/' | relative_url }}"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag[0] }}</a>
       {% endfor %}
     </div>
     <hr class="tag-divider">
