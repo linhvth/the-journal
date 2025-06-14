@@ -7,11 +7,16 @@ author:
   name: Linh Vu (linhvth)
   email: linhvth (dot) contact (at) gmail (dot) com
 
+url: "https://linhvth.github.io"
+baseurl: "/synapse-and-syntax"
 # The `>` after `description:` means to ignore line-breaks until next key. If
 #   you wish to omit the line-break after the end of text, use `>-` instead.
 description: |
   I think (synapse). I write (syntax). 
   Sometimes in that order.
+
+disqus:
+  shortname: synapse-and-syntax
 
 paginate: 5
 paginate_path: "/blog/page:num/"
