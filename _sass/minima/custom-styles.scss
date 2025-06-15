@@ -42,7 +42,7 @@
 
 /* The individual tag link */
 .tag-link {
-  color: #ccc; /* A light grey for the main tag text */
+  color: $link-base-color; /* A light grey for the main tag text */
   text-decoration: none;
   font-size: 0.9em;
   transition: color 0.2s ease-in-out;
@@ -50,7 +50,9 @@
 
 /* The hover effect for the tag link */
 .tag-link:hover {
-  color: #fff; /* Make it bright white on hover */
+  color: $link-hover-color;
+  text-decoration: underline $brand-color;
+  text-underline-offset: 3px;
 }
 
 /* Adds the '#' before the tag name */

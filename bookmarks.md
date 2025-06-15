@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Treasure Chest
+title: treasure-chest
 permalink: /bookmarks/
 ---
 
