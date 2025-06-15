@@ -6,10 +6,13 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
-body {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)),
-                    url("/synapse-and-syntax/assets/img/A-Sunday-Afternoon-on-the-Island-of-La-Grande-Jatte_Georges-Seurat.jpg");
+:root {
+  --bg-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)),
+              url({{ "/assets/img/A-Sunday-Afternoon-on-the-Island-of-La-Grande-Jatte_Georges-Seurat.jpg" | relative_url }});
+}
 
+body {
+  background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
