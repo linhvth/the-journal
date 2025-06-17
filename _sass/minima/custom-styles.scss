@@ -13,24 +13,34 @@
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 8px; /* Space between tags */
   list-style: none;
   padding: 0;
-  margin-top: 20px;
-  margin-bottom: 40px; /* Or 2em, etc. This adds the space below the topics. */
+  margin-top: 10px; 
+  margin-bottom: 10px; /* Or 2em, etc. This adds the space below the topics. */
 }
 
 /* In assets/main.scss */
 
 /* Styling for the horizontal lines around the tags */
-.tag-divider {
+.post-divider {
   border: 0;
-  height: 1px;
-  border-top: 1px solid $border-color-01; /* A dark grey line */
+  height: 0px;
+  border-top: 1px solid $border-color-02; /* A dark grey line */
 }
 
 /* The container for the tags on the homepage */
 .tag-cloud {
+  display: flex;
+  // justify-content: center; /* This centers the tags horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* Allows tags to wrap to a new line on small screens */
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+}
+
+.tag-cloud-post {
   display: flex;
   justify-content: center; /* This centers the tags horizontally */
   align-items: center;

@@ -32,7 +32,7 @@ layout: base
     </div>
 
     {%- if page.tags.size > 0 -%}
-      <div class="tag-cloud">
+      <div class="tag-cloud-post">
         {%- for tag in page.tags -%}
           {%- assign tag_slug = tag | slugify -%}
           <a class="tag-link" href="{{ '/tag/' | append: tag_slug | append: '/' | relative_url }}"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>

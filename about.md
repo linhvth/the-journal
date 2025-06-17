@@ -14,4 +14,4 @@ This blog is my own journey through that process, documented.
 
 -
 
-In case you were curious about the artwork in the background, it's a favorite of mine: *A Sunday Afternoon on the Island of La Grande Jatte* by Georges Seurat.
+In case you are curious about the artwork in the background, it's a favorite of mine: *A Sunday Afternoon on the Island of La Grande Jatte* by Georges Seurat.

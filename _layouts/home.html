@@ -16,19 +16,8 @@ layout: base
     {% assign posts = site.posts %}
   {% endif %}
 
-  {%- assign tags = site.tags | sort -%}
-  {% if tags.size > 0 %}
-    <div class="tag-cloud">
-      {% for tag in tags %}
-        {%- assign tag_slug = tag[0] | slugify -%}
-    <a class="tag-link" href="{{ '/tag/' | append: tag_slug | append: '/' | relative_url }}"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag[0] }}</a>
-      {% endfor %}
-    </div>
-    <hr class="tag-divider">
-  {% endif %}
 
-
-  <h2 class="post-list-heading">{{ page.title | default: "Announcements" }}</h2>
+  <h3 class="post-list-heading">{{ page.title | default: "Announcements" }}</h3>
 
   <div style="
     padding-left: 20px; /* Adjust this value for more/less indent */
@@ -42,9 +31,22 @@ layout: base
   </div>
   
   <hr class="section-separator">
-  <h2 class="post-list-heading">{{ page.list_title | default: "Recent Posts" }}</h2>
+  <h3 class="post-list-heading">{{ page.list_title | default: "Recent Posts" }}</h3>
   <ul class="post-list">
+    
+  <p> Explore my latest articles and thoughts below. For more about this blog, the navigation bar has you covered. </p>
 
+  {%- assign tags = site.tags | sort -%}
+  {% if tags.size > 0 %}
+    <div class="tag-cloud">
+      Filter by tags:
+      {% for tag in tags %}
+        {%- assign tag_slug = tag[0] | slugify -%}
+    <a class="tag-link" href="{{ '/tag/' | append: tag_slug | append: '/' | relative_url }}"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag[0] }}</a>
+      {% endfor %}
+    </div>
+    <hr class="post-divider">
+  {% endif %}
 
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
@@ -61,8 +63,46 @@ layout: base
           </a>
         </h3>
         {%- if site.minima.show_excerpts -%}
-          {{ post.excerpt }}
+
+          {%- comment -%} --- 1. PREPARE VARIABLES --- {%- endcomment -%}
+          {%- assign excerpt_plain = post.excerpt | strip_html -%}
+          {%- assign content_plain = post.content | strip_html -%}
+          {%- assign excerpt_word_count = excerpt_plain | number_of_words -%}
+          {%- assign content_word_count = content_plain | number_of_words -%}
+
+          {%- assign text_to_display = "" -%}
+          {%- assign words_shown = 0 -%}
+
+          {%- if excerpt_word_count <= 50 -%}
+            {%- assign text_to_display = excerpt_plain -%}
+            {%- assign words_shown = excerpt_word_count -%}
+            {%- assign cleaned_text = text_to_display | rstrip -%}
+            {%- if cleaned_text | slice: -1 == '.' -%}
+              {%- assign text_size = cleaned_text | size -%}
+              {%- assign new_size = text_size | minus: 1 -%}
+              {%- assign text_to_display = cleaned_text | slice: 0, new_size -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- assign text_to_display = excerpt_plain | truncatewords: 50, "" -%}
+            {%- assign words_shown = 50 -%}
+          {%- endif -%}
+
+          {%- assign show_read_more = false -%}
+          {%- if content_word_count > words_shown -%}
+            {%- assign show_read_more = true -%}
+          {%- endif -%}
+          
+          {%- comment -%} --- 3. RENDER THE HTML --- {%- endcomment -%}
+          <p class="post-excerpt">
+            {{ text_to_display | escape }}
+            {%- if show_read_more -%}
+              &hellip; <a href="{{ post.url | relative_url }}" class="read-more">Read more</a>
+            {%- endif -%}
+          </p>
+
         {%- endif -%}
+      
+      <hr class="post-divider">
       </li>
       {%- endfor -%}
     </ul>

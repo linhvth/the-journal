@@ -5,7 +5,7 @@ comments: true
 tags: 
     - thoughts
 ---
-The scroll becomes an obligation. A curated feed that once felt like connection now feels like a weight. The decision to leave social media is rarely a loudly declaration; it is a quiet closing of a door. It's a thought that returns to me often, a fantasy of disconnecting that feels both tempting and impossible.
+The scroll becomes an obligation. A curated feed that once felt like connection now feels like a weight. The decision to leave social media is rarely a loud declaration; it is a quiet closing of a door. It's a thought that returns to me often, a fantasy of disconnecting that feels both tempting and impossible.
 
 There are a thousand excuses for hesitation. Perhaps the most compelling is when digital platforms become so integrated into a culture that they are no longer "felt" like an optional. Consider the social fabric of a place like Vietnam, where Facebook and Instagram are not just apps, but the primary threads of connection. Daily life is navigated through Messenger; contact is made not through phone numbers or emails, but through direct messages and stories.
 
