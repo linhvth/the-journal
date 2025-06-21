@@ -6,8 +6,12 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
+.wrapper {
+  max-width: 700px; /* Minima's default is 800px. Change 700px to your desired width. */
+}
+
 :root {
-  --bg-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)),
+  --bg-image: linear-gradient(rgba(250, 249, 246, 0.75), rgba(250, 249, 246, 0.9)),
               url({{ "/assets/img/A-Sunday-Afternoon-on-the-Island-of-La-Grande-Jatte_Georges-Seurat.jpg" | relative_url }});
 }
 
@@ -20,5 +24,5 @@ body {
 
 .page-content {
   /* This makes the main content area see-through */
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(250, 249, 246, 0.75);
 }
