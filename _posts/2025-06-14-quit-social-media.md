@@ -2,6 +2,7 @@
 layout: post
 title: On quitting social media
 comments: true
+published: false
 tags: 
     - thoughts
 ---

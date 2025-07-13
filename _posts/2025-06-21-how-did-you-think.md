@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "\"What was your thought process?\""
+published: false
 tags: 
     - thoughts
     - learning
