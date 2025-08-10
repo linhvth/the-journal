@@ -1,7 +1,7 @@
 # Site-wide settings
 # ------------------
 
-title: synapse & syntax
+title: the-journal
 subtitle: homepage
 
 author:
@@ -9,15 +9,15 @@ author:
   email: linhvth (dot) contact (at) gmail (dot) com
 
 url: "https://linhvth.github.io"
-baseurl: "/synapse-and-syntax"
+baseurl: "/the-journal"
 # The `>` after `description:` means to ignore line-breaks until next key. If
 #   you wish to omit the line-break after the end of text, use `>-` instead.
 description: |
-  I think (synapse). I write (syntax). 
-  Sometimes in that order.
+  This is a logbook for ongoing prior-posterior updates, 
+  where I record my assumptions and test them against experience.
 
 disqus:
-  shortname: synapse-and-syntax
+  shortname: linhvth-thejournal
 
 paginate: 5
 paginate_path: "/blog/page:num/"
