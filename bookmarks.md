@@ -32,8 +32,8 @@ I'm constantly stumbling upon amazing things online. This page is my treasure ch
 </details>
 
 <details>
-<summary>[Blog-Posts]</summary>
+<summary>Blog Posts</summary>
 <ul>
-<li><a href=""></a></li>
+<li>Finding the rare people who make you more yourself, and why the best relationships begin with curiosity, authenticity, and conversation: <a href="https://www.henrikkarlsson.xyz/p/looking-for-alice">Looking for Alice</a></li>
 </ul>
 </details>
